@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>60-40</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -13,13 +13,31 @@
       <h1 class="title">60-40</h1>
       <p class="subtitle">The party game that reveals everything!</p>
 
-      <button class="main-button">New Game</button>
+      <button class="main-button" onclick="showPage('game')">New Game</button>
 
       <div class="button-row">
-        <button class="secondary-button">Profile</button>
-        <button class="secondary-button">Settings</button>
+        <button class="secondary-button">👤 Profile</button>
+        <button class="secondary-button">⚙️ Settings</button>
       </div>
     </div>
   </div>
+
+  <!-- Future screens -->
+  <div class="screen" id="game">
+    <div class="container">
+      <h2>Game screen</h2>
+      <p>Coming soon...</p>
+      <button class="secondary-button" onclick="showPage('home')">⬅️ Back</button>
+    </div>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
