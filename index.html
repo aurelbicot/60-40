@@ -13,7 +13,7 @@
       <h1 class="title">60-40</h1>
       <p class="subtitle">The party game that reveals everything!</p>
 
-      <button class="main-button" onclick="showPage('game')">New Game</button>
+<button class="main-button" onclick="showPage('new-game')">New Game</button>
 
       <div class="button-row">
         <button class="secondary-button">👤 Profile</button>
@@ -22,6 +22,54 @@
     </div>
   </div>
 
+  <!-- New Game Screen -->
+<div class="screen" id="new-game">
+  <div class="container">
+    <h2>New Game</h2>
+
+    <label class="subtitle">How many players?</label>
+    <div class="player-slider">
+      <span id="player-count">3</span> players
+      <input type="range" min="3" max="15" value="3" id="player-range" />
+    </div>
+
+    <h3 class="subtitle">Choose question packs</h3>
+    <p class="hint">Select one or more packs to mix questions</p>
+
+    <div class="pack-list">
+      <label class="pack">
+        <input type="checkbox" name="packs" checked />
+        <span class="icon">🎉</span>
+        <div class="pack-info">
+          <strong>Standard Pack</strong>
+          <small>Classic party questions</small>
+        </div>
+      </label>
+
+      <label class="pack">
+        <input type="checkbox" name="packs" />
+        <span class="icon">💘</span>
+        <div class="pack-info">
+          <strong>Crush Revealer</strong>
+          <small>Romantic & relationship questions</small>
+        </div>
+      </label>
+
+      <label class="pack">
+        <input type="checkbox" name="packs" />
+        <span class="icon">🔞</span>
+        <div class="pack-info">
+          <strong>PEGI 21</strong>
+          <small>Adult content – 21+ only</small>
+        </div>
+      </label>
+    </div>
+
+    <button class="main-button">Start Game</button>
+    <button class="secondary-button" onclick="showPage('home')">⬅️ Back</button>
+  </div>
+</div>
+
     <script>
     function showPage(id) {
       document.querySelectorAll('.screen').forEach(screen => {
@@ -29,6 +77,16 @@
       });
       document.getElementById(id).classList.add('active');
     }
+    document.addEventListener('DOMContentLoaded', () => {
+  const slider = document.getElementById('player-range');
+  const count = document.getElementById('player-count');
+
+  if (slider && count) {
+    slider.addEventListener('input', () => {
+      count.textContent = slider.value;
+    });
+  }
+});
   </script>
 </body>
 </html>

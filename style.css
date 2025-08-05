@@ -87,3 +87,61 @@ body, html {
 .secondary-button::before {
   font-size: 16px;
 }
+
+/* Subtitle */
+.subtitle {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 20px 0 10px;
+}
+
+/* Hint text */
+.hint {
+  font-size: 13px;
+  color: #fff9;
+  margin-bottom: 10px;
+}
+
+/* Slider */
+.player-slider {
+  margin-bottom: 30px;
+}
+
+.player-slider input[type="range"] {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Question packs */
+.pack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.pack {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.pack input {
+  accent-color: white;
+}
+
+.pack .icon {
+  font-size: 20px;
+}
+
+.pack-info small {
+  display: block;
+  font-size: 12px;
+  color: #fff8;
+}
