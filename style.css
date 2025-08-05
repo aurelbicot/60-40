@@ -34,9 +34,15 @@ body, html {
 }
 
 .subtitle {
+  font-weight: 600;
   font-size: 16px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin: 20px 0 10px;
+}
+
+.hint {
+  font-size: 13px;
+  color: #fff9;
+  margin-bottom: 10px;
 }
 
 /* Main button */
@@ -83,23 +89,9 @@ body, html {
   background-color: rgba(255, 255, 255, 0.45);
 }
 
-/* Icons (optionnel si tu veux ajouter des emojis inline) */
+/* Icons optionnels */
 .secondary-button::before {
   font-size: 16px;
-}
-
-/* Subtitle */
-.subtitle {
-  font-weight: 600;
-  font-size: 16px;
-  margin: 20px 0 10px;
-}
-
-/* Hint text */
-.hint {
-  font-size: 13px;
-  color: #fff9;
-  margin-bottom: 10px;
 }
 
 /* Slider */
@@ -130,22 +122,32 @@ body, html {
   align-items: center;
   gap: 12px;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.pack input {
-  accent-color: white;
+/* Style quand le pack est sélectionné */
+.pack:has(input:checked) {
+  background: white;
+  color: #ff6c6c;
+  border: 3px solid #ff6c6c;
+}
+
+.pack:has(input:checked) small {
+  color: #ff6c6c;
 }
 
 .pack .icon {
   font-size: 20px;
 }
 
-.pack-info small {
-  display: block;
-  font-size: 12px;
-  color: #fff8;
+/* Checkbox plus grande et visible */
+.pack input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff6c6c;
 }
 
+/* Navigation d’écrans */
 .screen {
   display: none;
 }
