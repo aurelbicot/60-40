@@ -13,7 +13,7 @@
   <div class="screen active" id="home">
     <div class="container">
       <div class="emoji-icon">😳</div>
-      <h1 class="title">60-41</h1>
+      <h1 class="title">60-42</h1>
       <p class="subtitle">The party game that reveals everything!</p>
       <button class="main-button" onclick="showPage('new-game')">New Game</button>
       <div class="button-row">
@@ -27,16 +27,13 @@
   <div class="screen" id="new-game">
     <div class="container">
       <h2>New Game</h2>
-
       <label class="subtitle">How many players?</label>
       <div class="player-slider">
         <span id="player-count">3</span> players
         <input type="range" min="3" max="15" value="3" id="player-range" />
       </div>
-
       <h3 class="subtitle">Choose question packs</h3>
       <p class="hint">Select one or more packs to mix questions</p>
-
       <div class="pack-list">
         <label class="pack">
           <input type="checkbox" name="packs" checked />
@@ -46,7 +43,6 @@
             <small>Classic party questions</small>
           </div>
         </label>
-
         <label class="pack">
           <input type="checkbox" name="packs" />
           <span class="icon">💘</span>
@@ -55,7 +51,6 @@
             <small>Romantic & relationship questions</small>
           </div>
         </label>
-
         <label class="pack">
           <input type="checkbox" name="packs" />
           <span class="icon">🔞</span>
@@ -65,7 +60,6 @@
           </div>
         </label>
       </div>
-
       <button class="main-button" onclick="showPage('player-setup-screen')">Start Game</button>
       <button class="secondary-button" onclick="showPage('home')">⬅️ Back</button>
     </div>
@@ -73,28 +67,24 @@
 
   <!-- Player Setup Screen -->
   <div class="screen" id="player-setup-screen">
-    <div class="screen-header">
-      <button class="icon-button" onclick="showPage('new-game')">⬅️</button>
-      <h2>Players</h2>
-      <button class="icon-button" onclick="showPage('home')">🏠</button>
+    <div class="container">
+      <div class="screen-header">
+        <button class="icon-button" onclick="showPage('new-game')">⬅️</button>
+        <h2>Players</h2>
+        <button class="icon-button" onclick="showPage('home')">🏠</button>
+      </div>
+      <p class="hint">Add players to start the game</p>
+      <div id="player-grid" class="player-grid"></div>
+      <div class="player-adjust-buttons">
+        <button class="adjust-button" onclick="removePlayer()">➖</button>
+        <button class="adjust-button" onclick="addPlayer()">➕</button>
+      </div>
+      <button class="main-button" onclick="startGame()">Start Game</button>
+      <p id="error-message" class="error-message" style="display: none;">All players must be completed to start</p>
     </div>
-
-    <p class="hint">Add players to start the game</p>
-
-    <div id="player-grid" class="player-grid">
-      <!-- Player bubbles generated dynamically -->
-    </div>
-
-    <div class="player-adjust-buttons">
-      <button class="adjust-button" onclick="removePlayer()">➖</button>
-      <button class="adjust-button" onclick="addPlayer()">➕</button>
-    </div>
-
-    <button class="main-button" onclick="startGame()">Start Game</button>
-    <p id="error-message" class="error-message" style="display: none;">All players must be completed to start</p>
   </div>
 
-  <!-- Modal for editing player -->
+  <!-- Modal -->
   <div id="player-modal" class="modal" style="display: none;">
     <div class="modal-content">
       <h3>Edit Profile</h3>
@@ -107,7 +97,7 @@
     </div>
   </div>
 
-  <!-- Base JS for navigation + slider -->
+  <!-- Base JS -->
   <script>
     function showPage(id) {
       document.querySelectorAll('.screen').forEach(screen => {
@@ -119,7 +109,6 @@
     document.addEventListener('DOMContentLoaded', () => {
       const slider = document.getElementById('player-range');
       const count = document.getElementById('player-count');
-
       if (slider && count) {
         slider.addEventListener('input', () => {
           count.textContent = slider.value;
