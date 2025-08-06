@@ -6,14 +6,13 @@
   <title>60-40</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="player-setup.css" />
-  <script src="player-setup.js" defer></script>
 </head>
 <body>
   <!-- Home Screen -->
   <div class="screen active" id="home">
     <div class="container">
       <div class="emoji-icon">😳</div>
-      <h1 class="title">60-45</h1>
+      <h1 class="title">60-46</h1>
       <p class="subtitle">The party game that reveals everything!</p>
       <button class="main-button" onclick="showPage('new-game')">New Game</button>
       <div class="button-row">
@@ -97,30 +96,32 @@
     </div>
   </div>
 
-  <!-- Base JS -->
+  <!-- Navigation & slider logic -->
   <script>
-  function showPage(id) {
-    document.querySelectorAll('.screen').forEach(screen => {
-      screen.classList.remove('active');
-    });
-    document.getElementById(id).classList.add('active');
-
-    // 🚀 Spécial pour la page "player-setup-screen"
-    if (id === 'player-setup-screen') {
-      renderPlayers();  // 👈 important !
-    }
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const slider = document.getElementById('player-range');
-    const count = document.getElementById('player-count');
-
-    if (slider && count) {
-      slider.addEventListener('input', () => {
-        count.textContent = slider.value;
+    function showPage(id) {
+      document.querySelectorAll('.screen').forEach(screen => {
+        screen.classList.remove('active');
       });
+      document.getElementById(id).classList.add('active');
+
+      if (id === 'player-setup-screen') {
+        renderPlayers(); // Fonction définie dans player-setup.js
+      }
     }
-  });
-</script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.getElementById('player-range');
+      const count = document.getElementById('player-count');
+
+      if (slider && count) {
+        slider.addEventListener('input', () => {
+          count.textContent = slider.value;
+        });
+      }
+    });
+  </script>
+
+  <!-- Charger le script après les fonctions nécessaires -->
+  <script src="player-setup.js"></script>
 </body>
 </html>
