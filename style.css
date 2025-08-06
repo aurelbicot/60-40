@@ -3,9 +3,9 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #ff6c6c, #ff8d8d);
+  background: #f8f4e6;
   height: 100vh;
-  color: #fff;
+  color: #333;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ body, html {
   padding: 20px;
 }
 
-/* Emoji (sans fond) */
+/* Emoji */
 .emoji-icon {
   font-size: 64px;
   margin-bottom: 25px;
@@ -31,24 +31,26 @@ body, html {
   font-size: 36px;
   font-weight: 800;
   margin: 0;
+  color: #222;
 }
 
 .subtitle {
   font-weight: 600;
   font-size: 16px;
   margin: 20px 0 10px;
+  color: #444;
 }
 
 .hint {
   font-size: 13px;
-  color: #fff9;
+  color: #777;
   margin-bottom: 10px;
 }
 
 /* Main button */
 .main-button {
-  background-color: white;
-  color: #ff6c6c;
+  background-color: #ff6c6c;
+  color: white;
   font-size: 16px;
   font-weight: 600;
   border: none;
@@ -56,12 +58,12 @@ body, html {
   padding: 14px 30px;
   margin-bottom: 20px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   transition: 0.2s;
 }
 
 .main-button:hover {
-  background-color: #f8f8f8;
+  background-color: #e65a5a;
 }
 
 /* Secondary buttons */
@@ -71,14 +73,13 @@ body, html {
 }
 
 .secondary-button {
-  background-color: rgba(255, 255, 255, 0.3);
-  border: none;
-  color: white;
+  background-color: white;
+  border: 2px solid #ff6c6c;
+  color: #ff6c6c;
   border-radius: 20px;
   padding: 10px 16px;
   font-size: 14px;
   cursor: pointer;
-  backdrop-filter: blur(5px);
   transition: 0.2s;
   display: flex;
   align-items: center;
@@ -86,10 +87,10 @@ body, html {
 }
 
 .secondary-button:hover {
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: #fff0f0;
 }
 
-/* Icons optionnels */
+/* Icons */
 .secondary-button::before {
   font-size: 16px;
 }
@@ -113,11 +114,11 @@ body, html {
 }
 
 .pack {
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   padding: 10px 16px;
   border-radius: 12px;
-  color: white;
+  color: #333;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -125,29 +126,35 @@ body, html {
   transition: all 0.2s ease-in-out;
 }
 
-/* Style quand le pack est sélectionné */
+/* Quand sélectionné */
 .pack:has(input:checked) {
-  background: white;
-  color: #ff6c6c;
+  background: #ff6c6c;
+  color: white;
   border: 3px solid #ff6c6c;
 }
 
 .pack:has(input:checked) small {
-  color: #ff6c6c;
+  color: white;
 }
 
 .pack .icon {
   font-size: 20px;
 }
 
-/* Checkbox plus grande et visible */
+.pack-info small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Checkbox visible */
 .pack input[type="checkbox"] {
   width: 18px;
   height: 18px;
   accent-color: #ff6c6c;
 }
 
-/* Navigation d’écrans */
+/* Navigation SPA */
 .screen {
   display: none;
 }
