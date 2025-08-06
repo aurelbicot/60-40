@@ -13,7 +13,7 @@
   <div class="screen active" id="home">
     <div class="container">
       <div class="emoji-icon">😳</div>
-      <h1 class="title">60-42</h1>
+      <h1 class="title">60-43</h1>
       <p class="subtitle">The party game that reveals everything!</p>
       <button class="main-button" onclick="showPage('new-game')">New Game</button>
       <div class="button-row">
@@ -99,22 +99,28 @@
 
   <!-- Base JS -->
   <script>
-    function showPage(id) {
-      document.querySelectorAll('.screen').forEach(screen => {
-        screen.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const slider = document.getElementById('player-range');
-      const count = document.getElementById('player-count');
-      if (slider && count) {
-        slider.addEventListener('input', () => {
-          count.textContent = slider.value;
-        });
-      }
+  function showPage(id) {
+    document.querySelectorAll('.screen').forEach(screen => {
+      screen.classList.remove('active');
     });
-  </script>
+    document.getElementById(id).classList.add('active');
+
+    // 🚀 Spécial pour la page "player-setup-screen"
+    if (id === 'player-setup-screen') {
+      renderPlayers();  // 👈 important !
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('player-range');
+    const count = document.getElementById('player-count');
+
+    if (slider && count) {
+      slider.addEventListener('input', () => {
+        count.textContent = slider.value;
+      });
+    }
+  });
+</script>
 </body>
 </html>
