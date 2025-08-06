@@ -67,7 +67,7 @@
   <!-- Player Setup Screen -->
   <div class="screen" id="player-setup-screen">
     <div class="container">
-      <div class="screen-header">
+      <div class="header-bar">
         <button class="icon-button" onclick="showPage('new-game')">⬅️</button>
         <h2>Players</h2>
         <button class="icon-button" onclick="showPage('home')">🏠</button>
@@ -75,8 +75,8 @@
       <p class="hint">Add players to start the game</p>
       <div id="player-grid" class="player-grid"></div>
       <div class="player-adjust-buttons">
-        <button class="adjust-button" onclick="removePlayer()">➖</button>
-        <button class="adjust-button" onclick="addPlayer()">➕</button>
+        <button class="adjust-button red" onclick="removePlayer()">➖</button>
+        <button class="adjust-button green" onclick="addPlayer()">➕</button>
       </div>
       <button class="main-button" onclick="startGame()">Start Game</button>
       <p id="error-message" class="error-message" style="display: none;">All players must be completed to start</p>
