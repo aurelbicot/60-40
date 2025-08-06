@@ -6,16 +6,19 @@ body, html {
   background: #fceed4;
   height: 100vh;
   color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /* Layout */
 .container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  min-height: 100vh;
   text-align: center;
   padding: 20px;
 }
